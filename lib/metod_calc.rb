@@ -1,37 +1,37 @@
 require_relative "./calculo.rb"
 
-def apresentacao
+def presentation
   puts '********************************'
-  puts '        Calculadora'
+  puts 'Calculator'
   puts '********************************'
-  puts 'Olá!'
-  puts 'Esta calculadora realiza operações matemáticas entre dois números.'
+  puts 'Hello!'
+  puts 'This calculator performs math operations between two numbers.'
 end
 
-def mostrar_menu
-  puts 'Digite o número da operação que você quer fazer:'
-  puts ' 1) ==> Somar +'
-  puts ' 2) ==> Subtrair -'
-  puts ' 3) ==> Multiplicar *'
-  puts ' 4) ==> Dividir /'
-  puts ' ou pressione outra tecla qualquer se quiser sair da calculadora.'
+set show_menu
+  puts 'Enter the number of the operation you want to do:'
+  puts ' 1) ==> Add +'
+  puts ' 2) ==> Subtract -'
+  puts ' 3) ==> Multiply *'
+  puts ' 4) ==> Split /'
+  puts ' or press any other key if you want to exit the calculator.'
   puts '--------------------------------'
 end
 
-def executar_calculo operacao
-  puts "Legal! Você escolheu #{mostrar_operacao operacao}"
+set execute_calculate operation
+  puts "Cool! You chose #{show_operation operation}"
   puts '--------------------------------'
-  puts 'Digite o primeiro número:'
-  numero1 = gets.chomp
+  puts 'Enter the first number:'
+  number1 = gets.chomp
   puts '--------------------------------'
-  puts 'Digite o segundo número:'
-  numero2 = gets.chomp
-  resultado = calculo(operacao, numero1, numero2)
-  return numero1, numero2, resultado
+  puts 'Enter the second number:'
+  number2 = gets.chomp
+  result = calculation(operation, number1, number2)
+  return number1, number2, result
 end
 
-def mostrar_operacao operacao
-  simbolo = case operacao
+def show_operation operation
+  symbol = case operation
   when '1'
     '+'
   when '2'
@@ -40,32 +40,32 @@ def mostrar_operacao operacao
     '*'
   when '4'
     '/'
-  else 
-    operacao
+  else
+    operation
   end
-  simbolo
+  symbol
 end
 
-def mostrar_resultado resultado_calculo, operacao
-  numero1 = resultado_calculo[0]
-  numero2 = resultado_calculo[1]
-  numero3 = resultado_calculo[2]
+def show_result result_calculation, operation
+  number1 = calculation_result[0]
+  number2 = result_calculation[1]
+  number3 = result_calculation[2]
 
   puts "********************************"
   puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-  puts "Resultado da sua operação:"
-  puts "#{numero1} #{mostrar_operacao operacao} #{numero2} = #{numero3}"
+  puts "Result of your operation:"
+  puts "#{number1} #{show_operation operation} #{number2} = #{number3}"
   puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
   puts "********************************"
 end
 
-def repetir_calculo 
-  puts "Você gostaria de realizar outra operação?"
-  puts ' S  ==> Sim'
-  puts ' N  ==> Não'
-  repetir = gets.chomp.upcase
-  if repetir == 'N'
-    puts "Você escolheu 'NÃO', então até mais e obrigado por usar a calculadora do grupo Precious Developers!"
+def repeat_calculate
+  puts "Would you like to perform another operation?"
+  puts ' Y ==> Yes'
+  puts 'N ==> No'
+  repeat = gets.chomp.upcase
+  if repeat == 'N'
+    puts "You chose 'NO', so see you later and thanks for using the Precious Developers group calculator!"
     exit
   end
 end
